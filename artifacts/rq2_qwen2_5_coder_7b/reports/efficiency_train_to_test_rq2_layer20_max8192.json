@@ -1,0 +1,88 @@
+{
+  "config": {
+    "model_path": "/mnt/sda/yz/projects/models/Qwen2.5-Coder-7B-Instruct",
+    "vector_path": "artifacts/rq1_qwen2_5_coder_7b/vectors/efficiency_rq1.fit.pt",
+    "data_files": [
+      "data/efficodebench/processed/efficodebench_ab_test.jsonl"
+    ],
+    "task_field": "description",
+    "positive_field": "fast_code",
+    "negative_field": "slow_code",
+    "concept_name": "efficiency",
+    "positive_name": "fast",
+    "negative_name": "slow",
+    "metadata_fields": [
+      "language",
+      "pair_id",
+      "base_pair_id",
+      "problem_id",
+      "split",
+      "source_file",
+      "source_row_index",
+      "original_output",
+      "original_direction",
+      "speedup_ratio",
+      "output_score",
+      "fast_original_side",
+      "slow_original_side"
+    ],
+    "preference_question": "Which implementation is faster at runtime and should be preferred?",
+    "output": "artifacts/rq2_qwen2_5_coder_7b/reports/efficiency_train_to_test_rq2_layer20_max8192.json",
+    "samples_output": "artifacts/rq2_qwen2_5_coder_7b/samples/efficiency_train_to_test_rq2_layer20_max8192.samples.jsonl",
+    "estimator": "answer_token_diff",
+    "layer": 20,
+    "max_length": 8192,
+    "truncation_side": "left",
+    "overflow_policy": "drop",
+    "dropped_samples_output": "artifacts/rq2_qwen2_5_coder_7b/reports/efficiency_train_to_test_rq2_layer20_max8192.dropped.jsonl",
+    "limit": null,
+    "seed": 13,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "trust_remote_code": false,
+    "allow_network": false,
+    "prepend_bos": true,
+    "skip_errors": false
+  },
+  "vector_info": {
+    "artifact_kind": "rq1_fit_directions",
+    "estimator": "rq1_fit_directions",
+    "layer": 20
+  },
+  "stats": {
+    "seen": 2700,
+    "kept": 2690,
+    "skipped_overlength": 10,
+    "skipped_errors": 0
+  },
+  "summary": {
+    "layer": 20,
+    "n_seen": 2700,
+    "n_kept": 2690,
+    "n_dropped_as_wrong": 10,
+    "n_correct": 1734,
+    "n_ties": 0,
+    "accuracy": 0.6422222222222222,
+    "accuracy_kept_only": 0.6446096654275093,
+    "by_language": {
+      "cpp": {
+        "seen": 894,
+        "correct": 666,
+        "ties": 0,
+        "accuracy": 0.7449664429530202
+      },
+      "java": {
+        "seen": 896,
+        "correct": 421,
+        "ties": 0,
+        "accuracy": 0.46986607142857145
+      },
+      "python": {
+        "seen": 900,
+        "correct": 647,
+        "ties": 0,
+        "accuracy": 0.7188888888888889
+      }
+    }
+  }
+}

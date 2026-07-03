@@ -1,0 +1,84 @@
+{
+  "config": {
+    "model_path": "/mnt/sda/yz/projects/models/llama-3.1-8b",
+    "vector_path": "artifacts/codeflaws/steering_vectors/llama-3.1-8b/codeflaws_correctness_codeflaws_correctness_train_answer_token_vectors.pt",
+    "data_files": [
+      "data/Codeflaws/processed/codeflaws_correctness_test.jsonl"
+    ],
+    "task_field": "description",
+    "positive_field": "correct_code",
+    "negative_field": "incorrect_code",
+    "concept_name": "codeflaws_correctness",
+    "positive_name": "correct",
+    "negative_name": "incorrect",
+    "metadata_fields": [
+      "language",
+      "dataset",
+      "pair_id",
+      "base_pair_id",
+      "problem_id",
+      "contest_id",
+      "problem_index",
+      "buggy_submission_id",
+      "accepted_submission_id",
+      "subject_dir",
+      "incorrect_file",
+      "correct_file",
+      "defect_class",
+      "verdict",
+      "defect_tags",
+      "repair_test_count",
+      "heldout_test_count",
+      "has_test_genprog",
+      "has_test_valid",
+      "split",
+      "split_mode"
+    ],
+    "preference_question": "Which implementation is more likely to be correct and pass the tests?",
+    "output": "artifacts/rq2_llama3_1_8b/reports/correctness_train_to_test_rq2_layer15.json",
+    "samples_output": "artifacts/rq2_llama3_1_8b/samples/correctness_train_to_test_rq2_layer15.samples.jsonl",
+    "estimator": "answer_token_diff",
+    "layer": 15,
+    "max_length": null,
+    "truncation_side": "left",
+    "overflow_policy": "truncate",
+    "dropped_samples_output": null,
+    "limit": null,
+    "seed": 13,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "trust_remote_code": false,
+    "allow_network": false,
+    "prepend_bos": true,
+    "skip_errors": false
+  },
+  "vector_info": {
+    "artifact_kind": "contrast_vector",
+    "estimator": "answer_token_diff",
+    "layer": 15
+  },
+  "stats": {
+    "seen": 442,
+    "kept": 442,
+    "skipped_overlength": 0,
+    "skipped_errors": 0
+  },
+  "summary": {
+    "layer": 15,
+    "n_seen": 442,
+    "n_kept": 442,
+    "n_dropped_as_wrong": 0,
+    "n_correct": 260,
+    "n_ties": 0,
+    "accuracy": 0.5882352941176471,
+    "accuracy_kept_only": 0.5882352941176471,
+    "by_language": {
+      "c": {
+        "seen": 442,
+        "correct": 260,
+        "ties": 0,
+        "accuracy": 0.5882352941176471
+      }
+    }
+  }
+}

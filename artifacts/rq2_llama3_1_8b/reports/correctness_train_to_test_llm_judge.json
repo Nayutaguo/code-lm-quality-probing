@@ -1,0 +1,105 @@
+{
+  "config": {
+    "model_path": "/mnt/sda/yz/projects/models/llama-3.1-8b",
+    "data_files": [
+      "data/Codeflaws/processed/codeflaws_correctness_test.jsonl"
+    ],
+    "task_field": "description",
+    "positive_field": "correct_code",
+    "negative_field": "incorrect_code",
+    "concept_name": "codeflaws_correctness",
+    "positive_name": "correct",
+    "negative_name": "incorrect",
+    "metadata_fields": [
+      "language",
+      "dataset",
+      "pair_id",
+      "base_pair_id",
+      "problem_id",
+      "contest_id",
+      "problem_index",
+      "buggy_submission_id",
+      "accepted_submission_id",
+      "subject_dir",
+      "incorrect_file",
+      "correct_file",
+      "defect_class",
+      "verdict",
+      "defect_tags",
+      "repair_test_count",
+      "heldout_test_count",
+      "has_test_genprog",
+      "has_test_valid",
+      "split",
+      "split_mode"
+    ],
+    "preference_question": "Which implementation is more likely to be correct and pass the tests?",
+    "output": "artifacts/rq2_llama3_1_8b/reports/correctness_train_to_test_llm_judge.json",
+    "samples_output": "artifacts/rq2_llama3_1_8b/samples/correctness_train_to_test_llm_judge.samples.jsonl",
+    "dropped_samples_output": "artifacts/rq2_llama3_1_8b/reports/correctness_train_to_test_llm_judge.dropped.jsonl",
+    "max_length": null,
+    "max_new_tokens": 8,
+    "truncation_side": "left",
+    "overflow_policy": "truncate",
+    "limit": null,
+    "seed": 13,
+    "do_sample": false,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "trust_remote_code": false,
+    "allow_network": false,
+    "prepend_bos": true,
+    "skip_errors": false
+  },
+  "selection": {
+    "data_files": [
+      "data/Codeflaws/processed/codeflaws_correctness_test.jsonl"
+    ],
+    "num_pairs": 442,
+    "limit": null
+  },
+  "stats": {
+    "seen": 442,
+    "kept": 442,
+    "skipped_overlength": 0,
+    "skipped_errors": 0
+  },
+  "summary": {
+    "n_seen": 442,
+    "n_kept": 442,
+    "n_dropped_as_wrong": 0,
+    "n_correct": 187,
+    "accuracy": 0.4230769230769231,
+    "accuracy_kept_only": 0.4230769230769231,
+    "accuracy_parsed_only": 0.46867167919799496,
+    "parse_status_counts": {
+      "parsed": 399,
+      "tie": 0,
+      "invalid": 0,
+      "unparsable": 43
+    },
+    "positive_label_counts": {
+      "A": 231,
+      "B": 211
+    },
+    "predicted_label_counts": {
+      "A": 14,
+      "B": 385
+    },
+    "by_language": {
+      "c": {
+        "seen": 442,
+        "correct": 187,
+        "parsed": 399,
+        "tie": 0,
+        "invalid": 0,
+        "unparsable": 43,
+        "accuracy": 0.4230769230769231,
+        "accuracy_parsed_only": 0.46867167919799496
+      }
+    }
+  },
+  "scoring_note": "Generation-based LLM judge. Only parse_status='parsed' contributes a label prediction; tie/invalid/unparsable count as wrong in accuracy."
+}

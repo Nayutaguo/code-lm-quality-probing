@@ -1,0 +1,88 @@
+{
+  "config": {
+    "model_path": "/mnt/sda/yz/projects/models/llama-3.1-8b",
+    "vector_path": "artifacts/efficodebench/steering_vectors/llama-3.1-8b/efficodebench_speed_efficodebench_ab_train_answer_token_vectors.pt",
+    "data_files": [
+      "data/efficodebench/processed/efficodebench_ab_test.jsonl"
+    ],
+    "task_field": "description",
+    "positive_field": "fast_code",
+    "negative_field": "slow_code",
+    "concept_name": "efficiency",
+    "positive_name": "fast",
+    "negative_name": "slow",
+    "metadata_fields": [
+      "language",
+      "pair_id",
+      "base_pair_id",
+      "problem_id",
+      "split",
+      "source_file",
+      "source_row_index",
+      "original_output",
+      "original_direction",
+      "speedup_ratio",
+      "output_score",
+      "fast_original_side",
+      "slow_original_side"
+    ],
+    "preference_question": "Which implementation is faster at runtime and should be preferred?",
+    "output": "artifacts/rq2_llama3_1_8b/reports/efficiency_train_to_test_rq2_layer15_max8192.json",
+    "samples_output": "artifacts/rq2_llama3_1_8b/samples/efficiency_train_to_test_rq2_layer15_max8192.samples.jsonl",
+    "estimator": "answer_token_diff",
+    "layer": 15,
+    "max_length": 8192,
+    "truncation_side": "left",
+    "overflow_policy": "drop",
+    "dropped_samples_output": null,
+    "limit": null,
+    "seed": 13,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "trust_remote_code": false,
+    "allow_network": false,
+    "prepend_bos": true,
+    "skip_errors": false
+  },
+  "vector_info": {
+    "artifact_kind": "contrast_vector",
+    "estimator": "answer_token_diff",
+    "layer": 15
+  },
+  "stats": {
+    "seen": 2700,
+    "kept": 2691,
+    "skipped_overlength": 9,
+    "skipped_errors": 0
+  },
+  "summary": {
+    "layer": 15,
+    "n_seen": 2700,
+    "n_kept": 2691,
+    "n_dropped_as_wrong": 9,
+    "n_correct": 1578,
+    "n_ties": 0,
+    "accuracy": 0.5844444444444444,
+    "accuracy_kept_only": 0.5863991081382386,
+    "by_language": {
+      "cpp": {
+        "seen": 895,
+        "correct": 660,
+        "ties": 0,
+        "accuracy": 0.7374301675977654
+      },
+      "java": {
+        "seen": 896,
+        "correct": 292,
+        "ties": 0,
+        "accuracy": 0.32589285714285715
+      },
+      "python": {
+        "seen": 900,
+        "correct": 626,
+        "ties": 0,
+        "accuracy": 0.6955555555555556
+      }
+    }
+  }
+}

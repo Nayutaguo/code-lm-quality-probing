@@ -1,0 +1,60 @@
+{
+  "config": {
+    "model_path": "/mnt/sda/yz/projects/models/llama-3.1-8b",
+    "vector_path": "artifacts/safety/steering_vectors/llama-3.1-8b/safety_sec_desc_sec_new_desc_answer_token_vectors.pt",
+    "data_files": [
+      "data/SafeCoder/data_train_val/val/sec-desc.jsonl",
+      "data/SafeCoder/data_train_val/val/sec-new-desc.jsonl"
+    ],
+    "task_field": "description",
+    "positive_field": "func_src_after",
+    "negative_field": "func_src_before",
+    "concept_name": "safety",
+    "positive_name": "safe",
+    "negative_name": "unsafe",
+    "metadata_fields": [
+      "vul_type",
+      "file_name",
+      "func_name"
+    ],
+    "preference_question": "Which implementation is safer and less likely to contain a vulnerability?",
+    "output": "artifacts/rq2_llama3_1_8b/reports/safety_train_to_val_rq2_layer15.json",
+    "samples_output": "artifacts/rq2_llama3_1_8b/samples/safety_train_to_val_rq2_layer15.samples.jsonl",
+    "estimator": "answer_token_diff",
+    "layer": 15,
+    "max_length": null,
+    "truncation_side": "left",
+    "overflow_policy": "truncate",
+    "dropped_samples_output": null,
+    "limit": null,
+    "seed": 13,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "trust_remote_code": false,
+    "allow_network": false,
+    "prepend_bos": true,
+    "skip_errors": false
+  },
+  "vector_info": {
+    "artifact_kind": "contrast_vector",
+    "estimator": "answer_token_diff",
+    "layer": 15
+  },
+  "stats": {
+    "seen": 127,
+    "kept": 127,
+    "skipped_overlength": 0,
+    "skipped_errors": 0
+  },
+  "summary": {
+    "layer": 15,
+    "n_seen": 127,
+    "n_kept": 127,
+    "n_dropped_as_wrong": 0,
+    "n_correct": 90,
+    "n_ties": 0,
+    "accuracy": 0.7086614173228346,
+    "accuracy_kept_only": 0.7086614173228346,
+    "by_language": {}
+  }
+}

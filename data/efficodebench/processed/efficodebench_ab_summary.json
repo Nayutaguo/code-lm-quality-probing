@@ -1,0 +1,119 @@
+{
+  "raw_dir": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset",
+  "output_dir": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed",
+  "languages": [
+    "cpp",
+    "python",
+    "java"
+  ],
+  "splits": [
+    "train",
+    "val",
+    "test"
+  ],
+  "dedupe_base_pair_id": true,
+  "outputs": {
+    "train": {
+      "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_train.jsonl",
+      "rows": 5747,
+      "language_paths": {
+        "cpp": {
+          "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_cpp_train.jsonl",
+          "rows": 3063
+        },
+        "java": {
+          "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_java_train.jsonl",
+          "rows": 877
+        },
+        "python": {
+          "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_python_train.jsonl",
+          "rows": 1807
+        }
+      },
+      "per_file_seen": {
+        "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset/cpp_ab_train.jsonl": 6126,
+        "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset/python_ab_train.jsonl": 3614,
+        "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset/java_ab_train.jsonl": 1754
+      },
+      "language_counts": {
+        "cpp": 3063,
+        "python": 1807,
+        "java": 877
+      },
+      "fast_original_side_counts": {
+        "A": 2425,
+        "B": 3322
+      },
+      "skipped_duplicates": 5747,
+      "skipped_errors": 0
+    },
+    "val": {
+      "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_val.jsonl",
+      "rows": 1317,
+      "language_paths": {
+        "cpp": {
+          "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_cpp_val.jsonl",
+          "rows": 459
+        },
+        "java": {
+          "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_java_val.jsonl",
+          "rows": 241
+        },
+        "python": {
+          "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_python_val.jsonl",
+          "rows": 617
+        }
+      },
+      "per_file_seen": {
+        "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset/cpp_ab_val.jsonl": 918,
+        "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset/python_ab_val.jsonl": 1234,
+        "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset/java_ab_val.jsonl": 482
+      },
+      "language_counts": {
+        "cpp": 459,
+        "python": 617,
+        "java": 241
+      },
+      "fast_original_side_counts": {
+        "B": 799,
+        "A": 518
+      },
+      "skipped_duplicates": 1317,
+      "skipped_errors": 0
+    },
+    "test": {
+      "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_test.jsonl",
+      "rows": 2700,
+      "language_paths": {
+        "cpp": {
+          "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_cpp_test.jsonl",
+          "rows": 900
+        },
+        "java": {
+          "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_java_test.jsonl",
+          "rows": 900
+        },
+        "python": {
+          "path": "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/processed/efficodebench_ab_python_test.jsonl",
+          "rows": 900
+        }
+      },
+      "per_file_seen": {
+        "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset/cpp_ab_test.jsonl": 1800,
+        "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset/python_ab_test.jsonl": 1800,
+        "/mnt/sda/yz/gzh/steering_vector/data/efficodebench/efficodebench-dataset/java_ab_test.jsonl": 1800
+      },
+      "language_counts": {
+        "cpp": 900,
+        "python": 900,
+        "java": 900
+      },
+      "fast_original_side_counts": {
+        "B": 2700
+      },
+      "skipped_duplicates": 2700,
+      "skipped_errors": 0
+    }
+  },
+  "errors": []
+}

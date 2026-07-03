@@ -1,0 +1,117 @@
+{
+  "config": {
+    "model_path": "/mnt/sda/yz/projects/models/Qwen2.5-Coder-7B-Instruct",
+    "data_files": [
+      "data/efficodebench/processed/efficodebench_ab_test.jsonl"
+    ],
+    "task_field": "description",
+    "positive_field": "fast_code",
+    "negative_field": "slow_code",
+    "concept_name": "efficiency",
+    "positive_name": "fast",
+    "negative_name": "slow",
+    "metadata_fields": [
+      "language",
+      "pair_id",
+      "base_pair_id",
+      "problem_id",
+      "split",
+      "source_file",
+      "source_row_index",
+      "original_output",
+      "original_direction",
+      "speedup_ratio",
+      "output_score",
+      "fast_original_side",
+      "slow_original_side"
+    ],
+    "preference_question": "Which implementation is faster at runtime and should be preferred?",
+    "output": "artifacts/rq2_qwen2_5_coder_7b/reports/efficiency_train_to_test_max8192_llm_judge.json",
+    "samples_output": "artifacts/rq2_qwen2_5_coder_7b/samples/efficiency_train_to_test_max8192_llm_judge.samples.jsonl",
+    "dropped_samples_output": "artifacts/rq2_qwen2_5_coder_7b/reports/efficiency_train_to_test_max8192_llm_judge.dropped.jsonl",
+    "max_length": 8192,
+    "max_new_tokens": 8,
+    "truncation_side": "left",
+    "overflow_policy": "drop",
+    "limit": null,
+    "seed": 13,
+    "do_sample": false,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "trust_remote_code": false,
+    "allow_network": false,
+    "prepend_bos": true,
+    "skip_errors": false
+  },
+  "selection": {
+    "data_files": [
+      "data/efficodebench/processed/efficodebench_ab_test.jsonl"
+    ],
+    "num_pairs": 2700,
+    "limit": null
+  },
+  "stats": {
+    "seen": 2700,
+    "kept": 2690,
+    "skipped_overlength": 10,
+    "skipped_errors": 0
+  },
+  "summary": {
+    "n_seen": 2700,
+    "n_kept": 2690,
+    "n_dropped_as_wrong": 10,
+    "n_correct": 1373,
+    "accuracy": 0.5085185185185185,
+    "accuracy_kept_only": 0.5104089219330855,
+    "accuracy_parsed_only": 0.5107886904761905,
+    "parse_status_counts": {
+      "parsed": 2688,
+      "tie": 2,
+      "invalid": 0,
+      "unparsable": 0
+    },
+    "positive_label_counts": {
+      "A": 1348,
+      "B": 1342
+    },
+    "predicted_label_counts": {
+      "A": 2451,
+      "B": 237
+    },
+    "by_language": {
+      "cpp": {
+        "seen": 894,
+        "correct": 461,
+        "parsed": 894,
+        "tie": 0,
+        "invalid": 0,
+        "unparsable": 0,
+        "accuracy": 0.5156599552572707,
+        "accuracy_parsed_only": 0.5156599552572707
+      },
+      "java": {
+        "seen": 896,
+        "correct": 455,
+        "parsed": 894,
+        "tie": 2,
+        "invalid": 0,
+        "unparsable": 0,
+        "accuracy": 0.5078125,
+        "accuracy_parsed_only": 0.5089485458612976
+      },
+      "python": {
+        "seen": 900,
+        "correct": 457,
+        "parsed": 900,
+        "tie": 0,
+        "invalid": 0,
+        "unparsable": 0,
+        "accuracy": 0.5077777777777778,
+        "accuracy_parsed_only": 0.5077777777777778
+      }
+    }
+  },
+  "scoring_note": "Generation-based LLM judge. Only parse_status='parsed' contributes a label prediction; tie/invalid/unparsable count as wrong in accuracy."
+}

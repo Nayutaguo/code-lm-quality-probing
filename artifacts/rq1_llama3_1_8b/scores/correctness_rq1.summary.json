@@ -1,0 +1,8 @@
+{
+  "concept_name": "codeflaws_correctness",
+  "best_layer": 32,
+  "mean_margin": 0.3915054500102997,
+  "ci_low": -0.08203183146076148,
+  "ci_high": 0.8650427314813609,
+  "cohens_d": 0.07707766900834344
+}

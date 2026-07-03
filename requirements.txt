@@ -1,0 +1,35 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# Lightweight environment for extracting hidden states and computing steering vectors.
+# This is intentionally based on the local XLLM4SE/fair-mir Transformers workflow,
+# not the heavier nnsight/CCA training stack.
+torch==2.3.1
+torchvision==0.18.1
+torchaudio==2.3.1
+transformers>=4.51.0,<5
+accelerate>=0.26.0
+safetensors>=0.4.3
+sentencepiece>=0.2.0
+protobuf>=4.25.0
+
+numpy==1.26.4
+scipy==1.12.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+datasets>=2.14.0
+jsonlines>=3.1.0
+tqdm==4.66.4
+openai>=1.0.0
+
+matplotlib>=3.7.0
+seaborn>=0.13.0
+lizard>=1.21.0
+pylint>=3.0.0
+
+# Useful for local Qwen-style trust_remote_code tokenizers/models.
+einops>=0.7.0
+tiktoken>=0.7.0
+transformers_stream_generator>=0.0.5
+
+# Optional but useful if you later do LoRA/adapter experiments around steering.
+peft>=0.10.0

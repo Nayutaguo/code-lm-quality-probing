@@ -1,0 +1,96 @@
+{
+  "config": {
+    "model_path": "/mnt/sda/yz/projects/models/Qwen2.5-Coder-7B-Instruct",
+    "data_files": [
+      "data/TestCodeRefactoring/processed/test_smells_quality_test.jsonl"
+    ],
+    "task_field": "description",
+    "positive_field": "clean_code",
+    "negative_field": "smelly_code",
+    "concept_name": "test_smells_quality",
+    "positive_name": "clean",
+    "negative_name": "smelly",
+    "metadata_fields": [
+      "language",
+      "dataset",
+      "instance_id",
+      "project",
+      "sha",
+      "date",
+      "file_name_before",
+      "file_name_after",
+      "refactoring",
+      "test_smell",
+      "split",
+      "split_mode"
+    ],
+    "preference_question": "Which Java test implementation is cleaner, less smelly, and easier to maintain?",
+    "output": "artifacts/rq2_qwen2_5_coder_7b/reports/test_smells_quality_train_to_test_llm_judge.json",
+    "samples_output": "artifacts/rq2_qwen2_5_coder_7b/samples/test_smells_quality_train_to_test_llm_judge.samples.jsonl",
+    "dropped_samples_output": "artifacts/rq2_qwen2_5_coder_7b/reports/test_smells_quality_train_to_test_llm_judge.dropped.jsonl",
+    "max_length": 4096,
+    "max_new_tokens": 8,
+    "truncation_side": "left",
+    "overflow_policy": "truncate",
+    "limit": null,
+    "seed": 13,
+    "do_sample": false,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "trust_remote_code": false,
+    "allow_network": false,
+    "prepend_bos": true,
+    "skip_errors": false
+  },
+  "selection": {
+    "data_files": [
+      "data/TestCodeRefactoring/processed/test_smells_quality_test.jsonl"
+    ],
+    "num_pairs": 122,
+    "limit": null
+  },
+  "stats": {
+    "seen": 122,
+    "kept": 122,
+    "skipped_overlength": 0,
+    "skipped_errors": 0
+  },
+  "summary": {
+    "n_seen": 122,
+    "n_kept": 122,
+    "n_dropped_as_wrong": 0,
+    "n_correct": 116,
+    "accuracy": 0.9508196721311475,
+    "accuracy_kept_only": 0.9508196721311475,
+    "accuracy_parsed_only": 0.9508196721311475,
+    "parse_status_counts": {
+      "parsed": 122,
+      "tie": 0,
+      "invalid": 0,
+      "unparsable": 0
+    },
+    "positive_label_counts": {
+      "A": 66,
+      "B": 56
+    },
+    "predicted_label_counts": {
+      "A": 62,
+      "B": 60
+    },
+    "by_language": {
+      "java": {
+        "seen": 122,
+        "correct": 116,
+        "parsed": 122,
+        "tie": 0,
+        "invalid": 0,
+        "unparsable": 0,
+        "accuracy": 0.9508196721311475,
+        "accuracy_parsed_only": 0.9508196721311475
+      }
+    }
+  },
+  "scoring_note": "Generation-based LLM judge. Only parse_status='parsed' contributes a label prediction; tie/invalid/unparsable count as wrong in accuracy."
+}

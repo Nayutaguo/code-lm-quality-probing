@@ -1,0 +1,89 @@
+{
+  "raw_dir": "/mnt/sda/yz/gzh/steering_vector/data/Codeflaws/codeflaws",
+  "output_dir": "/mnt/sda/yz/gzh/steering_vector/data/Codeflaws/processed",
+  "prefix": "codeflaws_correctness",
+  "split_mode": "problem",
+  "split_ratios": {
+    "train": 0.8,
+    "val": 0.1,
+    "test": 0.1
+  },
+  "outputs": {
+    "all": {
+      "path": "/mnt/sda/yz/gzh/steering_vector/data/Codeflaws/processed/codeflaws_correctness_all.jsonl",
+      "rows": 3904
+    },
+    "train": {
+      "path": "/mnt/sda/yz/gzh/steering_vector/data/Codeflaws/processed/codeflaws_correctness_train.jsonl",
+      "rows": 3076
+    },
+    "val": {
+      "path": "/mnt/sda/yz/gzh/steering_vector/data/Codeflaws/processed/codeflaws_correctness_val.jsonl",
+      "rows": 386
+    },
+    "test": {
+      "path": "/mnt/sda/yz/gzh/steering_vector/data/Codeflaws/processed/codeflaws_correctness_test.jsonl",
+      "rows": 442
+    }
+  },
+  "problem_counts": {
+    "train": 1012,
+    "val": 138,
+    "test": 134
+  },
+  "verdict_counts": {
+    "WRONG_ANSWER": 3580,
+    "TIME_LIMIT_EXCEEDED": 111,
+    "RUNTIME_ERROR": 152,
+    "": 50,
+    "PRESENTATION_ERROR": 7,
+    "MEMORY_LIMIT_EXCEEDED": 1,
+    "CHALLENGED": 1,
+    "CRASHED": 1,
+    "IDLENESS_LIMIT_EXCEEDED": 1
+  },
+  "defect_class_counts": {
+    "OFPF": 128,
+    "DCCA": 164,
+    "HIMS": 405,
+    "SMVB": 16,
+    "HDMS": 193,
+    "SDFN": 101,
+    "SISA": 38,
+    "SRIF": 56,
+    "DCCR": 467,
+    "SDIF": 21,
+    "HOTH": 310,
+    "ORRN": 308,
+    "SISF": 59,
+    "OILN": 325,
+    "OAIS": 244,
+    "HBRN": 85,
+    "STYP": 146,
+    "DRVA": 223,
+    "DRWV": 118,
+    "OAID": 28,
+    "OLLN": 18,
+    "SMOV": 100,
+    "OMOP": 9,
+    "HEXP": 77,
+    "OFFN": 21,
+    "OEDE": 21,
+    "OAAN": 33,
+    "DMAA": 14,
+    "": 50,
+    "OITC": 12,
+    "SIIF": 18,
+    "SIRT": 9,
+    "SDLA": 13,
+    "OIRO": 8,
+    "HCOM": 31,
+    "HDIM": 7,
+    "OICD": 6,
+    "SDIB": 7,
+    "DRAC": 4,
+    "OFPO": 11
+  },
+  "errors": [],
+  "num_errors": 0
+}

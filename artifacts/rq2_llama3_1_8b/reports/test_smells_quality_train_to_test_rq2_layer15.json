@@ -1,0 +1,75 @@
+{
+  "config": {
+    "model_path": "/mnt/sda/yz/projects/models/llama-3.1-8b",
+    "vector_path": "artifacts/rq1_llama3_1_8b/vectors/test_smells_quality_rq1.fit.pt",
+    "data_files": [
+      "data/TestCodeRefactoring/processed/test_smells_quality_test.jsonl"
+    ],
+    "task_field": "description",
+    "positive_field": "clean_code",
+    "negative_field": "smelly_code",
+    "concept_name": "test_smells_quality",
+    "positive_name": "clean",
+    "negative_name": "smelly",
+    "metadata_fields": [
+      "language",
+      "dataset",
+      "instance_id",
+      "project",
+      "sha",
+      "date",
+      "file_name_before",
+      "file_name_after",
+      "refactoring",
+      "test_smell",
+      "split",
+      "split_mode"
+    ],
+    "preference_question": "Which Java test implementation is cleaner, less smelly, and easier to maintain?",
+    "output": "artifacts/rq2_llama3_1_8b/reports/test_smells_quality_train_to_test_rq2_layer15.json",
+    "samples_output": "artifacts/rq2_llama3_1_8b/samples/test_smells_quality_train_to_test_rq2_layer15.samples.jsonl",
+    "estimator": "answer_token_diff",
+    "layer": 15,
+    "max_length": 4096,
+    "truncation_side": "left",
+    "overflow_policy": "truncate",
+    "dropped_samples_output": "artifacts/rq2_llama3_1_8b/reports/test_smells_quality_train_to_test_rq2_layer15.dropped.jsonl",
+    "limit": null,
+    "seed": 13,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "trust_remote_code": false,
+    "allow_network": false,
+    "prepend_bos": true,
+    "skip_errors": false
+  },
+  "vector_info": {
+    "artifact_kind": "rq1_fit_directions",
+    "estimator": "rq1_fit_directions",
+    "layer": 15
+  },
+  "stats": {
+    "seen": 122,
+    "kept": 122,
+    "skipped_overlength": 0,
+    "skipped_errors": 0
+  },
+  "summary": {
+    "layer": 15,
+    "n_seen": 122,
+    "n_kept": 122,
+    "n_dropped_as_wrong": 0,
+    "n_correct": 94,
+    "n_ties": 0,
+    "accuracy": 0.7704918032786885,
+    "accuracy_kept_only": 0.7704918032786885,
+    "by_language": {
+      "java": {
+        "seen": 122,
+        "correct": 94,
+        "ties": 0,
+        "accuracy": 0.7704918032786885
+      }
+    }
+  }
+}

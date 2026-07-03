@@ -1,0 +1,47 @@
+{
+  "input": "/mnt/sda/yz/gzh/steeringvector for code/data/TestCodeRefactoring/Complete Dataset.xlsx",
+  "sheet": "Instances",
+  "output_dir": "/mnt/sda/yz/gzh/steeringvector for code/data/TestCodeRefactoring/processed",
+  "prefix": "test_smells_quality",
+  "split_mode": "commit",
+  "split_ratios": {
+    "train": 0.8,
+    "val": 0.0,
+    "test": 0.2
+  },
+  "rows_kept": 608,
+  "rows_skipped_empty": 3,
+  "group_count": 29,
+  "project_counts": {
+    "Kafka": 373,
+    "Camel": 188,
+    "Cxf": 28,
+    "Accumulo": 19
+  },
+  "smell_counts": {
+    "Assertion Roulette": 135,
+    "Empty Test": 4,
+    "Inappropriate Assertion": 19,
+    "Print Statment": 2,
+    "Exception Handling": 334,
+    "Unknown Test": 50,
+    "Naming convention": 30,
+    "Ignored test": 1,
+    "Sleepy Test": 12,
+    "Inappropriate assertion": 21
+  },
+  "outputs": {
+    "all": {
+      "path": "/mnt/sda/yz/gzh/steeringvector for code/data/TestCodeRefactoring/processed/test_smells_quality_all.jsonl",
+      "rows": 608
+    },
+    "train": {
+      "path": "/mnt/sda/yz/gzh/steeringvector for code/data/TestCodeRefactoring/processed/test_smells_quality_train.jsonl",
+      "rows": 486
+    },
+    "test": {
+      "path": "/mnt/sda/yz/gzh/steeringvector for code/data/TestCodeRefactoring/processed/test_smells_quality_test.jsonl",
+      "rows": 122
+    }
+  }
+}

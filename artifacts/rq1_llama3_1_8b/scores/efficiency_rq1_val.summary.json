@@ -1,0 +1,8 @@
+{
+  "concept_name": "efficiency",
+  "best_layer": 32,
+  "mean_margin": 0.9927136898040771,
+  "ci_low": 0.45981161131741144,
+  "ci_high": 1.5256157682907427,
+  "cohens_d": 0.10060968301837626
+}

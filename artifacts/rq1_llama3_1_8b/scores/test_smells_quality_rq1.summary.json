@@ -1,0 +1,8 @@
+{
+  "concept_name": "test_smells_quality",
+  "best_layer": 32,
+  "mean_margin": 1.9103494882583618,
+  "ci_low": 0.05654772159006516,
+  "ci_high": 3.7641512549266585,
+  "cohens_d": 0.1828629369618182
+}

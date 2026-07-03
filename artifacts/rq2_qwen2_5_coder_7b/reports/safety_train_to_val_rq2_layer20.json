@@ -1,0 +1,60 @@
+{
+  "config": {
+    "model_path": "/mnt/sda/yz/projects/models/Qwen2.5-Coder-7B-Instruct",
+    "vector_path": "artifacts/rq1_qwen2_5_coder_7b/vectors/safety_rq1.fit.pt",
+    "data_files": [
+      "data/SafeCoder/data_train_val/val/sec-desc.jsonl",
+      "data/SafeCoder/data_train_val/val/sec-new-desc.jsonl"
+    ],
+    "task_field": "description",
+    "positive_field": "func_src_after",
+    "negative_field": "func_src_before",
+    "concept_name": "safety",
+    "positive_name": "safe",
+    "negative_name": "unsafe",
+    "metadata_fields": [
+      "vul_type",
+      "file_name",
+      "func_name"
+    ],
+    "preference_question": "Which implementation is safer and less likely to contain a vulnerability?",
+    "output": "artifacts/rq2_qwen2_5_coder_7b/reports/safety_train_to_val_rq2_layer20.json",
+    "samples_output": "artifacts/rq2_qwen2_5_coder_7b/samples/safety_train_to_val_rq2_layer20.samples.jsonl",
+    "estimator": "answer_token_diff",
+    "layer": 20,
+    "max_length": null,
+    "truncation_side": "left",
+    "overflow_policy": "truncate",
+    "dropped_samples_output": "artifacts/rq2_qwen2_5_coder_7b/reports/safety_train_to_val_rq2_layer20.dropped.jsonl",
+    "limit": null,
+    "seed": 13,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "trust_remote_code": false,
+    "allow_network": false,
+    "prepend_bos": true,
+    "skip_errors": false
+  },
+  "vector_info": {
+    "artifact_kind": "rq1_fit_directions",
+    "estimator": "rq1_fit_directions",
+    "layer": 20
+  },
+  "stats": {
+    "seen": 127,
+    "kept": 127,
+    "skipped_overlength": 0,
+    "skipped_errors": 0
+  },
+  "summary": {
+    "layer": 20,
+    "n_seen": 127,
+    "n_kept": 127,
+    "n_dropped_as_wrong": 0,
+    "n_correct": 103,
+    "n_ties": 0,
+    "accuracy": 0.8110236220472441,
+    "accuracy_kept_only": 0.8110236220472441,
+    "by_language": {}
+  }
+}
